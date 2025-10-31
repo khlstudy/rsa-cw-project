@@ -1,0 +1,4 @@
+What is 2+2?|4
+What color is the sky?|blue
+What is the capital of Ukraine?|kyiv
+What is 3*5?|15

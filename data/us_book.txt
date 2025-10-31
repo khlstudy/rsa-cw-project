@@ -1,0 +1,25 @@
+[2025-10-31T13:02:05.108Z] INIT admin admin1
+[2025-10-31T13:03:43.262Z] REGISTER alice by admin admin1
+[2025-10-31T13:11:29.546Z] IDENTIFY success alice
+[2025-10-31T13:11:29.557Z] ACCESS_START alice level=1
+[2025-10-31T13:11:49.710Z] STEP OK alice Q="What is the capital of Ukraine?"
+[2025-10-31T13:12:15.260Z] STEP FAIL alice Q="What is the capital of Ukraine?" A="Lviv"
+[2025-10-31T13:12:15.262Z] ACCESS_REVOKED alice at cycle 10
+[2025-10-31T13:12:15.262Z] ACCESS_END alice
+[2025-10-31T13:12:43.937Z] IDENTIFY success alice
+[2025-10-31T13:12:43.949Z] ACCESS_START alice level=1
+[2025-10-31T13:12:56.118Z] STEP FAIL alice Q="What is the capital of Ukraine?" A="Lviv"
+[2025-10-31T13:12:56.120Z] ACCESS_REVOKED alice at cycle 5
+[2025-10-31T13:12:56.120Z] ACCESS_END alice
+[2025-10-31T13:13:21.854Z] IDENTIFY FAIL alice
+[2025-10-31T13:13:33.090Z] IDENTIFY FAIL alice
+[2025-10-31T13:13:35.715Z] IDENTIFY success alice
+[2025-10-31T13:13:35.725Z] ACCESS_START alice level=1
+[2025-10-31T13:14:23.162Z] Challenge issued to alice X=3
+[2025-10-31T13:15:49.601Z] Challenge verify alice X=3 resp=162754 ok=true
+[2025-10-31T13:16:26.803Z] Challenge verify alice X=5 resp=162754 ok=false
+[2025-10-31T13:16:34.448Z] Challenge verify alice X=3 resp=162 ok=false
+[2025-10-31T13:38:54.051Z] RSA_course keys generated R=16 bits=61
+[2025-10-31T13:38:54.056Z] RSA_course encrypted ./data/input.txt -> ./data/close.txt
+[2025-10-31T13:41:25.597Z] RSA_course decrypted ./data/close.txt -> ./data/out.txt
+[2025-10-31T18:28:40.369Z] DELETE alice by admin admin1

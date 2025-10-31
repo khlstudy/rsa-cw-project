@@ -1,0 +1,11 @@
+{
+  "R_digits": 16,
+  "bits": 61,
+  "maxBytes": 7,
+  "blocks": [
+    "1730948dc8bbee79",
+    "eb675ab6942ca9d",
+    "fc387d90482659a",
+    "978cb3f787c6c4d"
+  ]
+}

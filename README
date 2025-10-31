@@ -1,0 +1,51 @@
+1. Ініціалізація системи (створення адміністратора)
+node id_auth_subsystem_course.js init admin1 pass123
+
+2. Реєстрація нового користувача
+node id_auth_subsystem_course.js register admin1 pass123 alice qwerty123 read_write
+
+admin1 — адміністратор
+pass123 — його пароль
+alice — новий користувач
+qwerty123 — пароль користувача
+read_write — права доступу
+
+3. Перевірка ідентифікації користувача
+node id_auth_subsystem_course.js identify alice qwerty123
+
+4. Виклик challenge-response (двоетапна перевірка)
+node id_auth_subsystem_course.js issueChallenge alice
+
+Програма виведе випадкове число X
+Крок 2: Перевірити відповідь
+Тепер треба обчислити Y (залежно від формули).
+Якщо система сама його згенерує, можна протестувати перевірку вручну:
+node id_auth_subsystem_course.js verifyChallenge alice 12345 67890
+
+5. Генерація RSA-параметрів
+node id_auth_subsystem_course.js gen_rsa_course 16
+
+Це створює RSA-ключі (e, d, n, R) для тесту з 16-значним R
+
+6. Шифрування файлу
+Спочатку створити тестовий файл:
+input.txt 
+Тепер виконати команду:
+node id_auth_subsystem_course.js encryptFile_course
+
+Вийде файл close.txt — зашифрований варіант.
+
+7. Розшифрування
+node id_auth_subsystem_course.js decryptFile_course
+
+У результаті з’явиться файл out.txt із вихідним текстом
+
+8. Механізм “періодичної (стохастичної) автентифікації через ask.txt
+Створити файл: ask.txt
+Формат: <question>|<expectedAnswer>
+Ввести команду
+node id_auth_subsystem_course.js identify alice qwerty123
+ Випадково візьме запитання з ask.txt.
+ Попросить ввести відповідь.
+ Запише результат у us_book.txt.
+ Якщо неправильно — заблокує користувача (access_revoked: true у users_meta.json).
