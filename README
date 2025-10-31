@@ -2,13 +2,13 @@
 node id_auth_subsystem_course.js init admin1 pass123
 
 2. Реєстрація нового користувача
-node id_auth_subsystem_course.js register admin1 pass123 alice qwerty123 read_write
+node id_auth_subsystem_course.js register admin1 pass123 alice qwerty123 RW
 
 admin1 — адміністратор
 pass123 — його пароль
 alice — новий користувач
 qwerty123 — пароль користувача
-read_write — права доступу
+RW — права доступу
 
 3. Перевірка ідентифікації користувача
 node id_auth_subsystem_course.js identify alice qwerty123
@@ -48,4 +48,6 @@ node id_auth_subsystem_course.js identify alice qwerty123
  Випадково візьме запитання з ask.txt.
  Попросить ввести відповідь.
  Запише результат у us_book.txt.
- Якщо неправильно — заблокує користувача (access_revoked: true у users_meta.json).
+
+9. Видалити користувача
+node id_auth_subsystem_course.js deleteUser admin1 pass123 alice
